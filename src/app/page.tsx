@@ -1,65 +1,127 @@
-import Image from "next/image";
+import { brands } from "./data/brands";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import BrandCard from "./components/BrandCard";
+import DisclaimerBar from "./components/DisclaimerBar";
+import AboutSection from "./components/AboutSection";
+import Footer from "./components/Footer";
+import MobileModal from "./components/MobileModal";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const gclidValue = typeof params.gclid === "string" ? params.gclid : undefined;
+
+  // With only one brand, we don't need sorting, but we'll keep it for robustness
+  const sortedBrands = [...brands].sort((a, b) => b.rating - a.rating);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-grow">
+        <Hero />
+        
+        <section id="brands" className="py-20 bg-background/50">
+          <div className="container mx-auto px-4">
+            <div className={`grid grid-cols-1 ${sortedBrands.length > 1 ? 'lg:grid-cols-3' : 'max-w-2xl mx-auto'} gap-8`}>
+              {sortedBrands.map((brand, index) => (
+                <BrandCard 
+                  key={brand.id} 
+                  brand={brand} 
+                  rank={index + 1} 
+                  gclid={gclidValue} 
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="guide" className="py-20 bg-background relative overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="bg-gradient-to-br from-primary/20 to-transparent p-1 md:p-px rounded-[3rem]">
+              <div className="bg-background rounded-[3rem] p-8 md:p-16">
+                <h2 className="text-3xl md:text-5xl font-black mb-8 italic uppercase tracking-tighter">
+                  Guia de <span className="gold-text">Avaliação</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <p className="text-gray-400 font-medium leading-relaxed">
+                      O nosso processo de avaliação é independente e rigoroso. Analisamos cada casino com base em critérios objetivos para garantir a sua segurança e diversão.
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full chip-gradient flex items-center justify-center text-black font-black">1</div>
+                      <span className="text-white font-bold uppercase tracking-tight">Segurança e Licenciamento</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full chip-gradient flex items-center justify-center text-black font-black">2</div>
+                      <span className="text-white font-bold uppercase tracking-tight">Variedade de Jogos</span>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full chip-gradient flex items-center justify-center text-black font-black">3</div>
+                      <span className="text-white font-bold uppercase tracking-tight">Bónus e Promoções</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full chip-gradient flex items-center justify-center text-black font-black">4</div>
+                      <span className="text-white font-bold uppercase tracking-tight">Métodos de Pagamento</span>
+                    </div>
+                    <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mt-6">
+                      * Atualizado semanalmente por especialistas do mercado português.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <DisclaimerBar />
+        
+        <AboutSection />
+
+        <section id="faq" className="py-20 bg-background/30">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-5xl font-black mb-12 italic uppercase tracking-tighter text-center">
+              Perguntas <span className="gold-text">Frequentes</span>
+            </h2>
+            <div className="space-y-6">
+              {[
+                { q: "Os casinos listados são legais em Portugal?", a: "Sim, todos os casinos que recomendamos possuem licença válida emitida pelo SRIJ." },
+                { q: "Como posso reclamar um bónus?", a: "Basta clicar no botão 'Claim Offer' e seguir as instruções no site do casino." },
+                { q: "O que é o GCLID?", a: "É um identificador de clique do Google usado para medir a eficácia das nossas recomendações." }
+              ].map((item, i) => (
+                <div key={i} className="bg-card-bg/50 border border-white/5 p-6 rounded-2xl">
+                  <h4 className="text-white font-black uppercase tracking-tight mb-2 italic">{item.q}</h4>
+                  <p className="text-gray-400 text-sm font-medium">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-20 bg-background">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter">
+              Precisa de <span className="gold-text">Ajuda?</span>
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-xl mx-auto font-medium">
+              A nossa equipa de especialistas está disponível para esclarecer qualquer dúvida sobre os casinos online em Portugal.
+            </p>
+            <a href="mailto:geral@faridpt.com" className="inline-block bg-white/5 border border-primary/30 text-primary font-black px-12 py-4 rounded-2xl uppercase tracking-[0.2em] hover:bg-primary/10 transition-all">
+              Contactar Equipa
+            </a>
+          </div>
+        </section>
       </main>
+
+      <Footer />
+
+      <MobileModal brands={brands} gclid={gclidValue} />
     </div>
   );
 }
