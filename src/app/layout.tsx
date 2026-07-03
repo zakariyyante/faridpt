@@ -52,6 +52,13 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+
+            // Page view conversion
+            gtag('event', 'conversion', {
+                'send_to': '${GA_MEASUREMENT_ID}/Ykc2CJHHosocEI7QnYRE',
+                'value': 1.0,
+                'currency': 'USD'
+            });
           `}
         </Script>
         
