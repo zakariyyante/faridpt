@@ -27,10 +27,14 @@ const BrandCard = ({ brand, rank, gclid }: BrandCardProps) => {
 
   const handleCardClick = () => {
     track("Brand Click", { brand: brand.name });
+    
     if (typeof window !== "undefined" && window.gtag_report_conversion) {
+      // The conversion script handles the redirect in its callback
       window.gtag_report_conversion(finalUrl);
+    } else {
+      // Fallback if the script isn't loaded
+      window.open(finalUrl, "_blank", "noopener,noreferrer");
     }
-    window.open(finalUrl, "_blank", "noopener,noreferrer");
   };
 
   const getRankBadge = (rank: number) => {

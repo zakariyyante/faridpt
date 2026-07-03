@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const GA_MEASUREMENT_ID = "AW-18262485006";
-const CONVERSION_LABEL = "XXXXXXXXXXXX"; // Replace with actual label if needed
+const CONVERSION_LABEL = "Wyr6CK6x58YcEI7QnYRE";
 
 export default function RootLayout({
   children,
@@ -61,7 +61,7 @@ export default function RootLayout({
             function gtag_report_conversion(url) {
               var callback = function () {
                 if (typeof(url) != 'undefined') {
-                  // window.location = url; // We handle this in BrandCard
+                  window.location = url;
                 }
               };
               gtag('event', 'conversion', {
