@@ -55,14 +55,14 @@ const MobileModal = ({ brands, gclid }: MobileModalProps) => {
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Crown size={14} className="text-primary" />
             <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-              VIP Mobile Access
+              Acesso Móvel VIP
             </span>
           </div>
           <h2 className="text-4xl font-black mb-4 uppercase italic tracking-tighter leading-none">
-            Exclusive <span className="gold-text">Mobile</span> Offers
+            Ofertas Móveis <span className="gold-text">Exclusivas</span>
           </h2>
           <p className="text-gray-400 text-sm max-w-xs mx-auto font-medium">
-            Hand-picked premium deals optimized for your mobile gaming experience.
+            Ofertas premium selecionadas e otimizadas para a sua experiência de jogo móvel.
           </p>
         </div>
 
@@ -90,13 +90,13 @@ const MobileModal = ({ brands, gclid }: MobileModalProps) => {
               />
             </div>
             <p className="text-[10px] text-gray-600 max-w-xs font-bold uppercase tracking-widest">
-              &copy; 2026 faridpt.com • Elite Standards in Gaming
+              &copy; 2026 faridpt.com • Padrões de Elite no Jogo
             </p>
             <button 
               onClick={() => setIsOpen(false)}
               className="mt-6 px-10 py-4 rounded-2xl bg-white/5 border border-primary/30 text-primary font-black uppercase tracking-[0.2em] text-xs hover:bg-primary/10 transition-all active:scale-95"
             >
-              Enter Main Site
+              Entrar no Site Principal
             </button>
           </div>
         </div>

@@ -9,11 +9,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Brands", href: "#brands" },
-    { name: "Guide", href: "#guide" },
-    { name: "About Us", href: "#about" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Início", href: "/" },
+    { name: "Marcas", href: "#brands" },
+    { name: "Guia", href: "#guide" },
+    { name: "Sobre Nós", href: "#about" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   return (
@@ -50,7 +50,7 @@ const Header = () => {
             href="#brands" 
             className="bg-primary hover:bg-primary-light text-black font-black px-6 py-2 rounded-full text-xs uppercase tracking-tighter transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-primary/20"
           >
-            Top Brands
+            Melhores Marcas
           </Link>
         </div>
 
@@ -81,7 +81,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className="bg-primary text-black text-center font-black py-4 rounded-xl uppercase tracking-widest mt-4"
           >
-            Top Brands
+            Melhores Marcas
           </Link>
         </div>
       )}

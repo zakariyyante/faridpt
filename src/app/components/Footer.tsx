@@ -32,12 +32,12 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 w-full max-w-5xl text-center md:text-left">
             <div className="flex flex-col gap-6">
               <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center md:justify-start gap-2">
-                <Crown size={14} /> Navigation
+                <Crown size={14} /> Navegação
               </h4>
               <div className="flex flex-col gap-3">
-                <Link href="/" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Home</Link>
-                <Link href="#brands" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Top Brands</Link>
-                <Link href="#guide" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Review Guide</Link>
+                <Link href="/" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Início</Link>
+                <Link href="#brands" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Melhores Marcas</Link>
+                <Link href="#guide" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Guia de Avaliação</Link>
               </div>
             </div>
             <div className="flex flex-col gap-6">
@@ -45,26 +45,26 @@ const Footer = () => {
                 <Crown size={14} /> Legal
               </h4>
               <div className="flex flex-col gap-3">
-                <Link href="/privacy" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Terms of Service</Link>
-                <Link href="/cookies" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Cookie Policy</Link>
+                <Link href="/privacy" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Política de Privacidade</Link>
+                <Link href="/terms" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Termos de Serviço</Link>
+                <Link href="/cookies" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Política de Cookies</Link>
               </div>
             </div>
             <div className="flex flex-col gap-6">
               <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center md:justify-start gap-2">
-                <Crown size={14} /> Support
+                <Crown size={14} /> Apoio
               </h4>
               <div className="flex flex-col gap-3">
-                <Link href="#contact" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Contact Us</Link>
-                <Link href="#faq" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">FAQ</Link>
+                <Link href="#contact" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Contacto</Link>
+                <Link href="#faq" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Perguntas Frequentes</Link>
               </div>
             </div>
             <div className="flex flex-col gap-6">
               <h4 className="text-primary font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center md:justify-start gap-2">
-                <Crown size={14} /> Responsible
+                <Crown size={14} /> Responsabilidade
               </h4>
               <div className="flex flex-col gap-3">
-                <Link href="https://www.srij.turismodeportugal.pt" target="_blank" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">SRIJ Authority</Link>
+                <Link href="https://www.srij.turismodeportugal.pt" target="_blank" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">Autoridade SRIJ</Link>
                 <Link href="https://www.begambleaware.org/" target="_blank" className="text-gray-500 hover:text-white text-sm font-bold transition-colors">BeGambleAware</Link>
               </div>
             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="text-center">
           <p className="text-[10px] text-gray-700 font-black uppercase tracking-[0.3em]">
-            &copy; {currentYear} faridpt.com • The Crown Standard in Reviews
+            &copy; {currentYear} faridpt.com • O Padrão de Elite em Avaliações
           </p>
         </div>
       </div>

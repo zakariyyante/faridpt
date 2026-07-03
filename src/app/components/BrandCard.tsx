@@ -99,7 +99,7 @@ const BrandCard = ({ brand, rank, gclid }: BrandCardProps) => {
 
       {/* Bonus Info */}
       <div className="flex-grow flex flex-col justify-center text-center mb-8">
-        <span className="text-[10px] text-primary font-black uppercase tracking-[0.2em] mb-2">Exclusive Offer</span>
+        <span className="text-[10px] text-primary font-black uppercase tracking-[0.2em] mb-2">Oferta Exclusiva</span>
         <h3 className="text-2xl font-black text-white leading-none italic uppercase tracking-tighter">
           {brand.bonus}
         </h3>
@@ -109,14 +109,14 @@ const BrandCard = ({ brand, rank, gclid }: BrandCardProps) => {
       <button 
         className="w-full bg-gradient-to-r from-primary to-primary-light text-black font-black py-5 rounded-2xl uppercase tracking-[0.15em] text-sm flex items-center justify-center gap-3 transition-all duration-300 shadow-lg shadow-primary/10 group-hover:shadow-primary/30 group-hover:scale-[1.02]"
       >
-        Claim Offer
+        Reclamar Oferta
         <ExternalLink size={20} />
       </button>
 
       {/* Social Proof */}
       <div className="mt-4 text-center">
         <span className="text-[9px] text-gray-600 font-bold uppercase tracking-widest">
-          {brand.votes.toLocaleString()} High Rollers Voted
+          {brand.votes.toLocaleString()} Grandes Jogadores Votaram
         </span>
       </div>
     </div>

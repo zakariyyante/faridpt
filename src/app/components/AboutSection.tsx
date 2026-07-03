@@ -7,7 +7,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black mb-6 italic uppercase tracking-tighter">
-            The <span className="gold-text">Crown Standard</span> of Reviews
+            O <span className="gold-text">Padrão de Elite</span> das Avaliações
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full opacity-50" />
         </div>
@@ -19,16 +19,16 @@ const AboutSection = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-lg shadow-primary/5">
                 <Search size={32} />
               </div>
-              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Our Review Process</h3>
+              <h3 className="text-3xl font-black italic uppercase tracking-tighter">O Nosso Processo de Avaliação</h3>
             </div>
             
             <ul className="space-y-6">
               {[
-                "Rigorous SRIJ License Verification",
-                "Real-Money Deposit & Withdrawal Tests",
-                "Deep Analysis of Bonus Terms & Conditions",
-                "24/7 Customer Support Quality Audit",
-                "Mobile Performance & UX Benchmarking"
+                "Verificação Rigorosa da Licença SRIJ",
+                "Testes de Depósito e Levantamento com Dinheiro Real",
+                "Análise Profunda dos Termos e Condições dos Bónus",
+                "Auditoria de Qualidade do Apoio ao Cliente 24/7",
+                "Benchmarking de Desempenho Móvel e UX"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4 group">
                   <div className="mt-1 text-primary group-hover:scale-125 transition-transform duration-300">
@@ -46,11 +46,11 @@ const AboutSection = () => {
               <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-white">
                 <HeartHandshake size={32} />
               </div>
-              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Play Responsible</h3>
+              <h3 className="text-3xl font-black italic uppercase tracking-tighter">Jogue com Responsabilidade</h3>
             </div>
             
             <p className="text-gray-400 mb-10 text-lg font-medium leading-relaxed">
-              Gaming is a form of entertainment, not a source of income. We are committed to responsible gaming and encourage all our users to play within their limits.
+              O jogo é uma forma de entretenimento, não uma fonte de rendimento. Estamos comprometidos com o jogo responsável e incentivamos todos os nossos utilizadores a jogar dentro dos seus limites.
             </p>
 
             <div className="grid grid-cols-1 gap-6">
@@ -60,7 +60,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm font-black uppercase tracking-widest text-white">Linha Vida</span>
-                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">24/7 Helpline</span>
+                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Linha de Apoio 24/7</span>
                 </div>
               </div>
             </div>

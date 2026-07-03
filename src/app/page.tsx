@@ -92,7 +92,7 @@ export default async function Home({
             <div className="space-y-6">
               {[
                 { q: "Os casinos listados são legais em Portugal?", a: "Sim, todos os casinos que recomendamos possuem licença válida emitida pelo SRIJ." },
-                { q: "Como posso reclamar um bónus?", a: "Basta clicar no botão 'Claim Offer' e seguir as instruções no site do casino." },
+                { q: "Como posso reclamar um bónus?", a: "Basta clicar no botão 'Reclamar Oferta' e seguir as instruções no site do casino." },
                 { q: "O que é o GCLID?", a: "É um identificador de clique do Google usado para medir a eficácia das nossas recomendações." }
               ].map((item, i) => (
                 <div key={i} className="bg-card-bg/50 border border-white/5 p-6 rounded-2xl">
