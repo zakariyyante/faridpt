@@ -15,8 +15,9 @@ export default async function Home({
   const params = await searchParams;
   const gclidValue = typeof params.gclid === "string" ? params.gclid : undefined;
 
-  // With only one brand, we don't need sorting, but we'll keep it for robustness
-  const sortedBrands = [...brands].sort((a, b) => b.rating - a.rating);
+  // Filter out brands that are marked as mobile-only for the main grid
+  const desktopBrands = brands.filter(brand => !brand.isMobile);
+  const sortedBrands = [...desktopBrands].sort((a, b) => b.rating - a.rating);
 
   return (
     <div className="min-h-screen flex flex-col">

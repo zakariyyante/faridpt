@@ -7,17 +7,17 @@ const Hero = () => {
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/5 border border-primary/20 mb-10 shadow-inner">
           <Crown className="text-primary animate-pulse" size={18} />
           <span className="text-xs font-black text-primary uppercase tracking-[0.2em]">
-            O Centro de Elite de Casinos em Portugal 2026
+            A Referência de Luxo em Casinos Online 2026
           </span>
         </div>
 
         <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter italic uppercase">
-          Encontre os <span className="gold-text">Sites Melhor</span> <br />
-          <span className="text-white">Avaliados</span> da Faridpt
+          Os 10 <span className="gold-text">Melhores Casinos</span> <br />
+          <span className="text-white">Com Pagamentos</span> Rápidos
         </h1>
 
         <p className="text-lg md:text-xl text-gray-400 mb-14 max-w-2xl mx-auto font-medium leading-relaxed">
-          Seleção especializada, bónus aprovados pela elite e levantamentos ultra-rápidos. O destino final para os grandes jogadores portugueses.
+          Análise rigorosa dos casinos online em Portugal que pagam no próprio dia. Bónus exclusivos e segurança total garantida pela Faridpt.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

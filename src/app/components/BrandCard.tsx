@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Star, ExternalLink, Crown } from "lucide-react";
+import { Star, ExternalLink, Crown, Zap } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { Brand } from "../data/brands";
 
@@ -37,17 +37,45 @@ const BrandCard = ({ brand, rank, gclid }: BrandCardProps) => {
     }
   };
 
-  const getRankBadge = (rank: number) => {
+  const getBadge = () => {
+    if (brand.badge) {
+      const badgeStyles = {
+        best_casino: {
+          text: "MELHOR CASINO",
+          colors: "from-[#c5a059] to-[#f5d797] text-black",
+          icon: <Crown size={14} />
+        },
+        new_casino: {
+          text: "NOVO CASINO",
+          colors: "from-blue-600 to-blue-400 text-white",
+          icon: <Star size={14} className="fill-white" />
+        },
+        fast_withdrawal: {
+          text: "PAGAMENTO RÁPIDO",
+          colors: "from-green-600 to-green-400 text-white",
+          icon: <Zap size={14} className="fill-white" />
+        }
+      };
+
+      const style = badgeStyles[brand.badge];
+      return (
+        <div className={`absolute -top-4 -left-4 z-20 bg-gradient-to-br ${style.colors} px-4 py-2 rounded-xl flex items-center gap-2 font-black italic text-xs shadow-xl border-2 border-background transform -rotate-6`}>
+          {style.icon}
+          {style.text}
+        </div>
+      );
+    }
+
     if (rank > 3) return null;
     
-    const colors = {
+    const rankColors = {
       1: "from-[#c5a059] to-[#f5d797] text-black",
       2: "from-slate-300 to-white text-black",
       3: "from-amber-700 to-amber-500 text-white"
     };
 
     return (
-      <div className={`absolute -top-4 -left-4 z-20 bg-gradient-to-br ${colors[rank as keyof typeof colors]} w-12 h-12 rounded-full flex items-center justify-center font-black italic text-xl shadow-xl border-2 border-background transform -rotate-12`}>
+      <div className={`absolute -top-4 -left-4 z-20 bg-gradient-to-br ${rankColors[rank as keyof typeof rankColors]} w-12 h-12 rounded-full flex items-center justify-center font-black italic text-xl shadow-xl border-2 border-background transform -rotate-12`}>
         {rank}
       </div>
     );
@@ -58,7 +86,7 @@ const BrandCard = ({ brand, rank, gclid }: BrandCardProps) => {
       onClick={handleCardClick}
       className="relative group casino-card-bg rounded-[2rem] p-8 flex flex-col cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:casino-glow gold-shimmer border border-primary/10"
     >
-      {getRankBadge(rank)}
+      {getBadge()}
       
       {/* Corner Accents */}
       <div className="absolute top-4 right-4 text-primary/20 group-hover:text-primary/40 transition-colors">
